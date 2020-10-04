@@ -3,7 +3,7 @@ package com.ryanrvldo.shoppinglisttestdrivendevelopment.data.local
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "shopping_item_db")
+@Entity(tableName = "shopping_items")
 data class ShoppingItem(
     var name: String,
     var amount: Int,
