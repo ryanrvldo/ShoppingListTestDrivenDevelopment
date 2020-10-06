@@ -14,13 +14,13 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.androiddevs.shoppinglisttestingyt"
+        applicationId "com.ryanrvldo.shoppinglisttestdrivendevelopment"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.ryanrvldo.shoppinglisttestdrivendevelopment.HiltTestRunner"
 
         buildConfigField("String", "PIXABAY_API_KEY", apiKey)
     }
@@ -123,4 +123,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     androidTestImplementation "org.mockito:mockito-core:3.3.3"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:2.28-alpha"
+    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.29.1-alpha'
 }
