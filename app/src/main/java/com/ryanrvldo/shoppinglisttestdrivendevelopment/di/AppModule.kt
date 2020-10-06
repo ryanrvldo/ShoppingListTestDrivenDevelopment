@@ -2,6 +2,9 @@ package com.ryanrvldo.shoppinglisttestdrivendevelopment.di
 
 import android.content.Context
 import androidx.room.Room
+import com.ryanrvldo.shoppinglisttestdrivendevelopment.data.DefaultShoppingRepository
+import com.ryanrvldo.shoppinglisttestdrivendevelopment.data.ShoppingRepository
+import com.ryanrvldo.shoppinglisttestdrivendevelopment.data.local.ShoppingDao
 import com.ryanrvldo.shoppinglisttestdrivendevelopment.data.local.ShoppingItemDatabase
 import com.ryanrvldo.shoppinglisttestdrivendevelopment.data.remote.PixabayApi
 import com.ryanrvldo.shoppinglisttestdrivendevelopment.util.Constants.BASE_URL
@@ -38,4 +41,11 @@ object AppModule {
         .baseUrl(BASE_URL)
         .build()
         .create(PixabayApi::class.java)
+
+    @Provides
+    @Singleton
+    fun provideDefaultShoppingRepository(
+        dao: ShoppingDao,
+        api: PixabayApi
+    ) = DefaultShoppingRepository(dao, api) as ShoppingRepository
 }
